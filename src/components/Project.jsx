@@ -9,7 +9,7 @@ const Project = ({ projectName, imgPreview, altText, description }) => {
       <img 
         src={imgPreview} 
         alt={altText} 
-        className="projectpreview" 
+        className="project-preview" 
         onClick={handleImageClick} 
         style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable - throw an inline React style in there :P
       />

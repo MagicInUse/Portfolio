@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import resume from '../assets/Resume.pdf';
 
 function Navigation() {
     return (
@@ -15,6 +16,9 @@ function Navigation() {
                 </li>
                 <li>
                     <NavLink to="/contact" activeclassname="active" className="navlink">Contact</NavLink>
+                </li>
+                <li>
+                    <a href={resume} download="Norr-Resume.pdf" className="navlink">Resume</a>
                 </li>
             </ul>
         </nav>

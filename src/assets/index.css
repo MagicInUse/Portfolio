@@ -106,7 +106,7 @@ section {
   background: #242424;
 }
 
-.asidefix::after {
+.aside-fix::after {
   content: "";
   display: table;
   clear: both;
@@ -121,7 +121,7 @@ section {
   box-shadow: 10px 10px 10px 5px #111;
 }
 
-.projectpreview {
+.project-preview {
   width: 100%;
   height: auto;
 }
