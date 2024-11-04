@@ -42,14 +42,17 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 header h1 {
   margin: 0;
   padding-left: 120px;
 }
 
 footer {
-  justify-content: center;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px 10px 10px;
 }
 
 a {
@@ -63,28 +66,35 @@ a::after {
   color: #cc33cc;
 }
 
-nav ul {
+nav ul,
+footer ul {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
 }
-nav ul li {
+
+nav ul li,
+footer ul li {
   display: inline;
 }
+
 .navlink {
   text-decoration: none;
   color: #22dd22;
 }
+
 .navlink:hover {
   text-decoration: underline;
 }
+
 .navlink.active {
   font-weight: bold;
   position: relative;
   text-decoration: none;
   color: #dfdfdf;
 }
+
 .navlink::after {
   content: '';
 }
@@ -109,6 +119,11 @@ section {
   border-radius: 18px;
   margin: 10px 20px 20px 20px;
   box-shadow: 10px 10px 10px 5px #111;
+}
+
+.projectpreview {
+  width: 100%;
+  height: auto;
 }
 
 .contact {
@@ -164,6 +179,7 @@ form button {
   background-color: #22dd22;
   color: #242424;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 form button:hover {

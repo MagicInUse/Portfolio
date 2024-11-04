@@ -1,8 +1,8 @@
-const Project = ({ projectName, imgPreview, altText, description }) => {
+const Project = ({ projectName, imgPreview, altText, description, classes}) => {
     return (
       <section>
-        <h3>{projectName}</h3>
-        <img src={imgPreview} alt={altText}/>
+        <h2>{projectName}</h2>
+        <img src={imgPreview} alt={altText} className="projectpreview"/>
         <p>{description}</p>
       </section>
     );

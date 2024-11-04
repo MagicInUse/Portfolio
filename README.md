@@ -6,4 +6,4 @@ A simple portfolio site utilizing NodeJS & React
 - [Netlify](https://app.netlify.com/)
 - [Coolers](https://coolors.co/)
 - [Lipsum Lorem Ipsum Generator](https://www.lipsum.com/)
-- Lots of /explain and css edits with GitHubCopilot
+- Lots of /explain and css edits with [GitHub Copilot](https://github.com/features/copilot)
