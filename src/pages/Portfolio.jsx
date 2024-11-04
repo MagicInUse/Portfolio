@@ -28,22 +28,22 @@ const Portfolio = () => {
         }
         />
         <Project
-        projectName="PCB / Placement Comparison Tool"
-        imgPreview={js1}
-        altText="A code snippet from an application"
-        description={
-          <>
-            This was a real-world problem I was asked to solve at my previous occupation before going back to school. I was given two files that dealth with PCB and placement information that needed to show any differences between the two. It's a bit sloppy, but it closed a Supplier Corrective Action Report! 
-          </>
-        }
-        />
-        <Project
         projectName="Canvas & ESP32-CAM"
         imgPreview={js2}
         altText="A code snippet from an application"
         description={
           <>
             A side project I started to learn more about the ESP32-CAM and how to use it with a Canvas element. Jaren is wanting to learn machine vision, so along with making the GUI, I'm also learning how to use the ESP32-CAM to take pictures and use a canvas to go over the RGBA values.
+          </>
+        }
+        />
+        <Project
+        projectName="PCB / Placement Comparison Tool"
+        imgPreview={js1}
+        altText="A code snippet from an application"
+        description={
+          <>
+            This was a real-world problem I was asked to solve at my previous occupation before going back to school. I was given two files that dealth with PCB and placement information that needed to show any differences between the two. It's a bit sloppy, but it closed a Supplier Corrective Action Report! 
           </>
         }
         />

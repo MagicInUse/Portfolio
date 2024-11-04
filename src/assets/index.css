@@ -187,3 +187,52 @@ form button:hover {
   background-color: #118811;
   color: #fff;
 }
+
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+
+  header {
+    background-image: none;
+    padding: 20px;
+  }
+
+  header h1 {
+    padding-left: 0;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  nav ul,
+  footer ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .headshot {
+    width: 80%;
+    float: none;
+  }
+
+  form section {
+    flex-direction: column;
+  }
+
+  form label {
+    text-align: left;
+    padding-right: 0;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    flex: 1;
+  }
+
+  form button {
+    align-self: center;
+  }
+}
