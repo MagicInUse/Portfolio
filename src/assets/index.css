@@ -3,9 +3,11 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #dfdfdf;
+  background-image: url('./BGimg.png');
+  background-position: top;
+  background-repeat: repeat-y;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,71 +18,156 @@
 body {
   margin: 0 auto;
   display: flex;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-header {
+#root {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #242424aa;
+}
+
+header, footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #f8f9fa;
+  padding: 50px;
+  background: #242424;
 }
 
+header {
+  background-image: url('./logo.png');
+  background-position: left;
+  background-position-x: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 header h1 {
   margin: 0;
+  padding-left: 120px;
+}
+
+footer {
+  justify-content: center;
+  padding: 10px;
+}
+
+a {
+  color: #cc33cc;
+  text-decoration: none;
+}
+
+a::after {
+  content: '\2197'; /* Unicode character for external link icon */
+  font-size: 1em;
+  color: #cc33cc;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 30px;
   margin: 0;
-  padding: 0;
 }
-
 nav ul li {
   display: inline;
 }
-
-nav ul li a {
+.navlink {
   text-decoration: none;
-  color: #007bff;
+  color: #22dd22;
 }
-
-nav ul li a:hover {
+.navlink:hover {
   text-decoration: underline;
 }
+.navlink.active {
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  color: #dfdfdf;
+}
+.navlink::after {
+  content: '';
+}
 
-button {
+section {
+  margin: 23px 20px;
+  padding: 5px 15px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background: #242424;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.asidefix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.headshot {
+  width: 40%;
+  height: auto;
+  float: right;
+  border-radius: 18px;
+  margin: 10px 20px 20px 20px;
+  box-shadow: 10px 10px 10px 5px #111;
+}
+
+.contact {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+form label {
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+}
+
+form input,
+form select,
+form textarea {
+  flex: 2;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: #fff;
+}
+
+form textarea {
+  flex: 2;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: #fff;
+  height: auto;
+}
+
+form button {
+  font: inherit;
+  transition: 0.5s;
+  align-self: center;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background-color: #22dd22;
+  color: #242424;
+  cursor: pointer;
+}
+
+form button:hover {
+  transition: 0.5s;
+  background-color: #118811;
+  color: #fff;
 }

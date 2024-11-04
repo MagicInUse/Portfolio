@@ -1,5 +1,12 @@
+import Card from '../components/Card';
+
 const About = () => {
-  return <h1>About Page</h1>;
+  return (
+    <Card
+      heading="About Me"
+      details='My girlfriend said that all I need to put here is "I am awesome."'
+    />
+  );
 };
 
 export default About;

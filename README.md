@@ -3,5 +3,7 @@ A simple portfolio site utilizing NodeJS & React
 
 ### References & Resources
 
-[Coolers](https://coolors.co/)
-[Netlify](https://app.netlify.com/)
+- [Netlify](https://app.netlify.com/)
+- [Coolers](https://coolors.co/)
+- [Lipsum Lorem Ipsum Generator](https://www.lipsum.com/)
+- Lots of /explain and css edits with GitHubCopilot

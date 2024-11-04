@@ -1,9 +1,10 @@
-const Project = () => {
+const Project = ({ projectName, imgPreview, altText, description }) => {
     return (
-      <div>
-        <h1>Projects</h1>
-        <p>List of projects...</p>
-      </div>
+      <section>
+        <h3>{projectName}</h3>
+        <img src={imgPreview} alt={altText}/>
+        <p>{description}</p>
+      </section>
     );
 };
 

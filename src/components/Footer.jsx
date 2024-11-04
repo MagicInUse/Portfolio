@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       <footer>
-        <p>&copy; 2023 Your Company</p>
+        <p>&copy; 2024 | Jacob Norr</p>
       </footer>
     );
   };
