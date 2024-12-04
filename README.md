@@ -1,6 +1,6 @@
 # Portfolio
 
-A simple portfolio page utilizing NodeJS & React.
+A simple portfolio page utilizing NodeJS & React. [View the live application on Netlify](https://jacobnorr.netlify.app/)!
 
 ## Table of Contents
 
@@ -49,7 +49,7 @@ To run this project locally, follow these steps:
     npm install
 4. Start the development server:
     ```sh
-    npm start
+    npm run dev
 5. Open your browser and navigate to ```http://localhost:5173```
 
 ## Usage
