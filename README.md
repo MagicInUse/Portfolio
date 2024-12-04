@@ -15,7 +15,7 @@ A simple portfolio page utilizing NodeJS & React. [View the live application on 
 
 ## Introduction
 
-This project is a personal portfolio website built using NodeJS and React. It showcases various projects and provides information about the developer. The website is designed to be responsive and user-friendly, with a clean and modern interface. Well, clean and modern as a non-UI expert. ;)
+This project is a personal portfolio website built using NodeJS and React. It showcases various projects and provides information about the developer. The website is designed to be responsive and user-friendly, with a clean and modern interface. Well, clean and modern as a non-UI expert.
 
 ## Features
 
