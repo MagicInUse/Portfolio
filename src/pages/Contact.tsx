@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -8,7 +8,7 @@ const Contact = () => {
     comments: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -16,9 +16,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('This functionality will be available soon.\nThank you for your patience!');
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const data = {
+      callerName: formData.name,
+      callerEmail: formData.email,
+      subject: formData.subject,
+      comment: formData.comments
+    };
+
+    try {
+      const response = await fetch('.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert('Your message has been sent!');
+      } else {
+        alert('Failed to send your message.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while sending your message.');
+    }
   };
 
   return (
@@ -69,8 +94,8 @@ const Contact = () => {
             name="comments"
             value={formData.comments}
             onChange={handleChange}
-            rows="5"
-            maxLength="500"
+            rows={5}
+            maxLength={500}
             required
           />
         </section>

@@ -1,17 +1,18 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Projects from './pages/Portfolio.jsx'; 
-import Contact from './pages/Contact.jsx';
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
+
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import Projects from './pages/Portfolio.js'; 
+import Contact from './pages/Contact.js';
+import Header from './components/Header.js';
+import Footer from './components/Footert.js';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
