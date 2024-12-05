@@ -18,32 +18,8 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const data = {
-      callerName: formData.name,
-      callerEmail: formData.email,
-      subject: formData.subject,
-      comment: formData.comments
-    };
-
-    try {
-      const response = await fetch('.netlify/functions/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        alert('Your message has been sent!');
-      } else {
-        alert('Failed to send your message.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while sending your message.');
-    }
+    alert("This functionality will be added in the future. Thank you for your patience.");
+    console.log("Submitting form data:", formData);
   };
 
   return (
