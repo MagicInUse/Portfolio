@@ -4,7 +4,7 @@ interface ProjectProps {
   projectName: string;
   imgPreview: string;
   altText: string;
-  description: string;
+  description: React.ReactNode;
 }
 
 const Project: React.FC<ProjectProps> = ({ projectName, imgPreview, altText, description }) => {
