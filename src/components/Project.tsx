@@ -20,7 +20,7 @@ const Project: React.FC<ProjectProps> = ({ projectName, imgPreview, altText, des
         alt={altText} 
         className="projectpreview" 
         onClick={handleImageClick} 
-        style={{ cursor: 'pointer' }} 
+        style={{ cursor: 'pointer', width: '100%' }} 
       />
       <p>{description}</p>
     </section>
