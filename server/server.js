@@ -4,20 +4,16 @@ import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 
 dotenv.config();
-const app = express();
+const app = express();TM
 
 // Verify env variables are loaded
-console.log('Environment Check:', {
-  hasUser: !!process.env.SMTP_USER,
-  hasPass: !!process.env.SMTP_PASSWORD,
-  hasToAddress: !!process.env.SMTP_TO_ADDRESS
-});
+// console.log('Environment Check:', {
+//   hasUser: !!process.env.SMTP_USER,
+//   hasPass: !!process.env.SMTP_PASSWORD,
+//   hasToAddress: !!process.env.SMTP_TO_ADDRESS
+// });
 
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://jacobnorr.me',
-  'https://www.jacobnorr.me'
-];
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',')
 
 app.use(cors({
   origin: allowedOrigins,
@@ -26,48 +22,38 @@ app.use(cors({
 
 app.use(express.json());
 
-// Test route
-app.get('/api/test', (req, res) => {
-  res.json({ message: 'Server is running' });
-});
-
 const transporter = nodemailer.createTransport({
-  host: "magicapps.dev",
+  host: process.env.SMTP_HOST,
   port: 465,
   secure: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASSWORD
-  },
-  tls: {
-    rejectUnauthorized: false
-  },
-  debug: true,
-  logger: true
+  }
 });
 
 app.post('/api/contact', async (req, res) => {
   // Log incoming request
-  console.log('Received contact request:', {
-    body: req.body,
-    auth: {
-      hasUser: !!process.env.SMTP_USER,
-      hasPass: !!process.env.SMTP_PASSWORD
-    }
-  });
+//   console.log('Received contact request:', {
+//     body: req.body,
+//     auth: {
+//       hasUser: !!process.env.SMTP_USER,
+//       hasPass: !!process.env.SMTP_PASSWORD
+//     }
+//   });
 
   try {
     // Test connection first
-    console.log('Testing connection...');
+    // console.log('Testing connection...');
     await transporter.verify();
-    console.log('Connection verified');
+    // console.log('Connection verified');
 
     const { name, email, subject, comments } = req.body;
-    console.log('Sending email with config:', {
-      from: process.env.SMTP_USER,
-      to: process.env.SMTP_TO_ADDRESS,
-      subject: `Portfolio Contact: ${subject}`
-    });
+    // console.log('Sending email with config:', {
+    //   from: process.env.SMTP_USER,
+    //   to: process.env.SMTP_TO_ADDRESS,
+    //   subject: `Portfolio Contact: ${subject}`
+    // });
 
     const info = await transporter.sendMail({
       from: process.env.SMTP_USER,
@@ -82,35 +68,18 @@ app.post('/api/contact', async (req, res) => {
       `
     });
 
-    console.log('Email sent successfully:', info);
+    // console.log('Email sent successfully:', info);
     res.json({ success: true, messageId: info.messageId });
   } catch (error) {
-    console.error('Detailed error:', {
-      message: error.message,
-      code: error.code,
-      response: error.response,
-      responseCode: error.responseCode,
-      command: error.command
-    });
+    // console.error('Detailed error:', {
+    //   message: error.message,
+    //   code: error.code,
+    //   response: error.response,
+    //   responseCode: error.responseCode,
+    //   command: error.command
+    // });
     res.status(500).json({ 
       success: false, 
-      error: error.message,
-      details: {
-        code: error.code,
-        response: error.response
-      }
-    });
-  }
-});
-
-// Add test connection endpoint
-app.get('/api/mail-test', async (req, res) => {
-  try {
-    await transporter.verify();
-    res.json({ success: true, message: 'SMTP connection successful' });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
       error: error.message,
       details: {
         code: error.code,
