@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import sendEmail from '../utils/mailer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const Contact = () => {
     subject: 'comment',
     comments: ''
   });
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,14 +18,37 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('This functionality will be available soon.\nThank you for your patience!');
+    setStatus('sending');
+    
+    try {
+      const result = await sendEmail(formData);
+      if (result.success) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: 'comment',
+          comments: ''
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
     <section>
       <h2 className="contact">Contact Me</h2>
+      {status === 'success' && (
+        <p style={{color: '#22dd22', textAlign: 'center'}}>Message sent successfully!</p>
+      )}
+      {status === 'error' && (
+        <p style={{color: '#dd2222', textAlign: 'center'}}>Failed to send message. Please try again.</p>
+      )}
       <form onSubmit={handleSubmit}>
         <section>
           <label htmlFor="name">Name:</label>
@@ -74,7 +99,9 @@ const Contact = () => {
             required
           />
         </section>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={status === 'sending'}>
+          {status === 'sending' ? 'Sending...' : 'Submit'}
+        </button>
       </form>
     </section>
   );

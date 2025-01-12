@@ -7,7 +7,7 @@ const Footer = () => {
           <li><a href="https://open.spotify.com/user/magicinuse" target="_blank">Spotify </a></li>
           <li><a href="https://www.twitch.tv/magicinuse" target="_blank">Twitch </a></li>
         </ul>
-        <p>&copy; 2024 | Jacob Norr</p>
+        <p>&copy; 2025 | Jacob Norr</p>
       </footer>
     );
   };
