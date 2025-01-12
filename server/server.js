@@ -2,16 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 dotenv.config();
-const app = express();TM
-
-// Verify env variables are loaded
-// console.log('Environment Check:', {
-//   hasUser: !!process.env.SMTP_USER,
-//   hasPass: !!process.env.SMTP_PASSWORD,
-//   hasToAddress: !!process.env.SMTP_TO_ADDRESS
-// });
+const app = express();
 
 const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',')
 
@@ -33,27 +31,10 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/api/contact', async (req, res) => {
-  // Log incoming request
-//   console.log('Received contact request:', {
-//     body: req.body,
-//     auth: {
-//       hasUser: !!process.env.SMTP_USER,
-//       hasPass: !!process.env.SMTP_PASSWORD
-//     }
-//   });
-
   try {
-    // Test connection first
-    // console.log('Testing connection...');
     await transporter.verify();
-    // console.log('Connection verified');
 
     const { name, email, subject, comments } = req.body;
-    // console.log('Sending email with config:', {
-    //   from: process.env.SMTP_USER,
-    //   to: process.env.SMTP_TO_ADDRESS,
-    //   subject: `Portfolio Contact: ${subject}`
-    // });
 
     const info = await transporter.sendMail({
       from: process.env.SMTP_USER,
@@ -68,16 +49,8 @@ app.post('/api/contact', async (req, res) => {
       `
     });
 
-    // console.log('Email sent successfully:', info);
     res.json({ success: true, messageId: info.messageId });
   } catch (error) {
-    // console.error('Detailed error:', {
-    //   message: error.message,
-    //   code: error.code,
-    //   response: error.response,
-    //   responseCode: error.responseCode,
-    //   command: error.command
-    // });
     res.status(500).json({ 
       success: false, 
       error: error.message,
@@ -87,6 +60,14 @@ app.post('/api/contact', async (req, res) => {
       }
     });
   }
+});
+
+// Serve static files from parent directory
+app.use(express.static(join(__dirname, '..')));
+
+// Handle all other routes by serving index.html
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, '..', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3001;
