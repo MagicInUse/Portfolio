@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import sendEmail from '../utils/mailer';
 
 const Contact: React.FC = () => {
@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
   };
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
     
