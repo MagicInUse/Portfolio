@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import sendEmail from '../utils/mailer';
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,13 +10,14 @@ const Contact = () => {
   });
   const [status, setStatus] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value
     });
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -94,8 +95,8 @@ const Contact = () => {
             name="comments"
             value={formData.comments}
             onChange={handleChange}
-            rows="5"
-            maxLength="500"
+            rows={5}
+            maxLength={500}
             required
           />
         </section>

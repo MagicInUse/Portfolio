@@ -15,7 +15,7 @@ A simple portfolio page utilizing NodeJS & React. [View the live application on 
 
 ## Introduction
 
-This project is a personal portfolio website built using NodeJS and React. It showcases various projects and provides information about the developer. The website is designed to be responsive and user-friendly, with a clean and modern interface. Well, clean and modern as a non-UI expert. ;)
+This project is a personal portfolio website built using NodeJS and React. It showcases various projects and provides information about the developer. The website is designed to be responsive and user-friendly, with a clean and modern interface. Well, clean and modern as a non-UI expert.
 
 ## Features
 
@@ -49,7 +49,7 @@ To run this project locally, follow these steps:
     npm install
 4. Start the development server:
     ```sh
-    npm start
+    npm run dev
 5. Open your browser and navigate to ```http://localhost:5173```
 
 ## Usage
