@@ -1,6 +1,6 @@
 # Portfolio
 
-A simple portfolio page utilizing NodeJS & React. [View the live application on Netlify](https://jacobnorr.netlify.app/)!
+A simple portfolio page utilizing NodeJS & React. [View it live](https://jacobnorr.netlify.app/)!
 
 ## Table of Contents
 
@@ -34,24 +34,6 @@ This project is a personal portfolio website built using NodeJS and React. It sh
 - **CSS**: Styling the components and layout.
 - **Netlify**: Hosting and deployment platform.
 
-## Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/MagicInUse/Portfolio.git
-2. Navigate to the project directory:
-    ```sh
-    cd portfolio
-3. Install the dependencies:
-    ```sh
-    npm install
-4. Start the development server:
-    ```sh
-    npm run dev
-5. Open your browser and navigate to ```http://localhost:5173```
-
 ## Usage
 
 - Home Page: Provides an introduction and overview of the portfolio.
@@ -65,7 +47,6 @@ This project is licensed under the terms of the [GPL-3.0 License](https://github
 
 ## References & Resources
 
-- [Netlify](https://app.netlify.com/)
 - [Coolers](https://coolors.co/)
 - [Lipsum Lorem Ipsum Generator](https://www.lipsum.com/)
 - Lots of /explain and CSS edits with [GitHub Copilot](https://github.com/features/copilot)

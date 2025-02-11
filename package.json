@@ -11,7 +11,7 @@
     "validate": "npm run validate:client && npm run validate:server",
     "validate:client": "cd client && test -d dist || echo \"Client build missing\"",
     "validate:server": "cd server && test -d dist || echo \"Server build missing\"",
-    "postinstall": "npm run install:client && npm run install:server",
+    "install:all": "npm run install:client && npm run install:server",
     "install:client": "cd client && npm install",
     "install:server": "cd server && npm install",
     "clean": "rimraf node_modules client/node_modules server/node_modules client/dist server/dist"
