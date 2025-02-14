@@ -62,12 +62,19 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Serve static files from parent directory
-app.use(express.static(join(__dirname, '..')));
+// Serve only the assets folder statically
+app.use('/assets', express.static(join(__dirname, '../assets')));
 
-// Handle all other routes by serving index.html
-app.get('*', (req, res) => {
+// Serve index.html from parent directory
+app.get('/', (req, res) => {
   res.sendFile(join(__dirname, '..', 'index.html'));
+});
+
+// Handle all other non-API routes by serving index.html for SPA
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(join(__dirname, '..', 'index.html'));
+  }
 });
 
 const PORT = process.env.PORT || 3001;
