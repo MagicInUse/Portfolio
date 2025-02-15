@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './AsideImg.module.css';
 
 interface AsideImgProps {
   source: string;
@@ -8,8 +9,12 @@ interface AsideImgProps {
 
 const AsideImg: React.FC<AsideImgProps> = ({ source, alt, classes }) => {
   return (
-    <aside>
-      <img src={source} alt={alt} className={classes} />
+    <aside className={styles.asideFix}>
+      <img 
+        src={source} 
+        alt={alt} 
+        className={`${styles.image} ${classes || ''}`} 
+      />
     </aside>
   );
 };

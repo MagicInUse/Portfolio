@@ -1,0 +1,19 @@
+.project {
+    margin: 23px 20px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    background: #242424;
+}
+
+.preview {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .project {
+        margin: 15px 10px;
+        padding: 5px 10px;
+    }
+}

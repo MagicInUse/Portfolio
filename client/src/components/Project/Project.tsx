@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from './Project.module.css';
 
 interface ProjectProps {
   projectName: string;
@@ -13,14 +13,13 @@ const Project: React.FC<ProjectProps> = ({ projectName, imgPreview, altText, des
   };
 
   return (
-    <section>
+    <section className={styles.project}>
       <h2>{projectName}</h2>
       <img 
         src={imgPreview} 
         alt={altText} 
-        className="projectpreview" 
+        className={styles.preview} 
         onClick={handleImageClick} 
-        style={{ cursor: 'pointer', width: '100%' }} 
       />
       <p>{description}</p>
     </section>

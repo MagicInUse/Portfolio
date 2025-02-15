@@ -1,0 +1,15 @@
+.image {
+    width: 40%;
+    height: auto;
+    float: right;
+    border-radius: 18px;
+    margin: 10px 20px 20px 20px;
+    box-shadow: 10px 10px 10px 5px #111;
+}
+
+@media (max-width: 800px) {
+    .image {
+        width: 80%;
+        float: none;
+    }
+}

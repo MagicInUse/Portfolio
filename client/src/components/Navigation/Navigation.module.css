@@ -1,0 +1,51 @@
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #22dd22;
+}
+
+.navlink:hover {
+    text-decoration: underline;
+}
+
+.navlink::after {
+    content: '';
+}
+
+.navlink.active {
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+    color: #dfdfdf;
+}
+
+/* Override the general link styles for resume download */
+.navlink[download] {
+    color: #22dd22;
+}
+
+.navlink[download]:hover {
+    text-decoration: underline;
+}
+
+/* Remove the external link arrow for the resume download */
+.navlink[download]::after {
+    content: '';
+}
+
+@media (max-width: 800px) {
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

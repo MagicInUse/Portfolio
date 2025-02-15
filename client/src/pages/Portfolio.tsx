@@ -1,4 +1,4 @@
-import Project from '../components/Project';
+import Project from '../components/Project/Project';
 import flashPreview from '../assets/flashPreview.png';
 import inputPreview from '../assets/inputPreview.png';
 import js1 from '../assets/js1.png';
