@@ -1,14 +1,23 @@
 .card {
-    margin: 23px 20px;
-    padding: 5px 15px;
+    margin: 1rem;
     border-radius: 8px;
     background: #242424;
 }
 
-.card::after {
-    content: "";
-    display: table;
-    clear: both;
+.card h2 {
+    font-size: 1.69rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #636675;
+    text-shadow: 2px 2px 4px #000;
+    transition: color 0.3s ease;
+    display: block;
+    width: 50%;
+}
+
+.card p {
+    text-indent: 1rem;
+    padding-bottom: 1rem;
 }
 
 .imageContainer img {
@@ -24,5 +33,9 @@
     .imageContainer img {
         width: 80%;
         float: none;
+    }
+    
+    .card h2 {
+        width: 100%; /* Full width when image stacks */
     }
 }
