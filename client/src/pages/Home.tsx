@@ -13,8 +13,8 @@ const Home : React.FC = () => {
                         <p>
                             With a strong foundation in full-stack web development, I have honed my skills 
                             in various programming languages and frameworks. I am proficient in JavaScript & C#, 
-                            and have extensive experience with <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer">Node</a>, 
-                            and <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express</a>. Along with software, 
+                            and have extensive experience with <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer">Node
+                            </a> and <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express</a>. Along with software, 
                             I also have experience building and maintaining computers, setting up networks, and
                             troubleshooting hardware and software issues. Going further into hardware, I have
                             experience with 3D printing and CNC machining, including design and operation. 
@@ -32,9 +32,9 @@ const Home : React.FC = () => {
                             This portfolio was made with <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
                             React</a>. It is a single-page application with a navigation bar that links to different 
                             sections of the page. The page is styled with custom CSS modules for more permanent solutions 
-                            and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a> for drafting, while using React components to display information. The 
-                            page is responsive and can be viewed on different screen sizes. In class, we used deployment 
-                            resources like <a href="https://render.com/" target="_blank" rel="noopener noreferrer">Render
+                            and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a> for drafting,
+                            while using React components to display information. The page is responsive and can be viewed on different screen sizes.
+                            In class, we used deployment resources like <a href="https://render.com/" target="_blank" rel="noopener noreferrer">Render
                             </a>, <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify
                             </a>, and <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel
                             </a>. Since then, I have moved to a <a href="https://magicapps.dev/" target="_blank" rel="noopener noreferrer">personal hosting 
