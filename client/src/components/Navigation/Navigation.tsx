@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import resume from '../../assets/Resume.pdf';  // Updated path to match new structure
+import resume from '../../assets/Resume.pdf';
 
 const Navigation = () => {
     return (

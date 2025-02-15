@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../components/Card/Card';
-import AsideImg from '../components/AsideImg/AsideImg';
+import { Card } from '../components/Card';
+import { AsideImg } from '../components/AsideImg';
 import headshot from '../assets/headshot.jpg';
 
 const Home : React.FC = () => {
