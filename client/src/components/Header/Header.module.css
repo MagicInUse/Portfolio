@@ -22,10 +22,11 @@
 
 .title {
     margin: 0;
-    padding-left: 5px;
+    padding-left: 72px;
     font-size: 2em;
     line-height: 1;
     text-shadow: 2px 2px 4px #000;
+    text-align: center;
 }
 
 @media (max-width: 800px) {

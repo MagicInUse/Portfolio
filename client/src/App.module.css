@@ -17,8 +17,8 @@
   font-style: normal;
   font-size: 1.5em;
   color: var(--primary-text);
+  background-image: url('./assets/BGimg.png');
   background-color: var(--primary-bg);
-  background-image: url('./BGimg.png');
   background-position: top;
   background-repeat: repeat-y;
 }
@@ -32,16 +32,11 @@
 }
 
 /* Layout */
-#root {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  background: var(--secondary-bg);
-}
-
 body {
   margin: 0 auto;
   display: flex;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 a {
