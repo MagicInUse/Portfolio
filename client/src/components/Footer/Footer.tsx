@@ -30,7 +30,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className={styles.copyright}>&copy; {new Date().getFullYear()} | Jacob Norr</p>
+      <p className={styles.copyright}>{new Date().getFullYear()} | Jacob Norr</p>
     </footer>
   );
 };
