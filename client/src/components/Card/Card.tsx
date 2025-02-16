@@ -9,8 +9,8 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ heading, details, image }) => {
     return (
         <section className={styles.card}>
-            {image && <div className={styles.imageContainer}>{image}</div>}
             <h2>{heading}</h2>
+            {image && <div className={styles.imageContainer}>{image}</div>}
             {details}
         </section>
     )

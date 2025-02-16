@@ -2,8 +2,9 @@ import React from 'react';
 import { Card } from '../components/Card';
 import { AsideImg } from '../components/AsideImg';
 import headshot from '../assets/headshot.jpg';
+import sendEmail from '../utils/mailer';
 
-const Home : React.FC = () => {
+const Home: React.FC = () => {
     return (
         <>
             <Card
@@ -23,30 +24,30 @@ const Home : React.FC = () => {
                             ESP32</a> microcontroller and learning C++!
                         </p>
                         <p>
-                            My journey in web development began with a full-stack bootcamp at the <a href="https://www.utah.edu/" target="_blank" rel="noopener noreferrer">
+                            My journey in web development really took off with a full-stack bootcamp course at the <a href="https://www.utah.edu/" target="_blank" rel="noopener noreferrer">
                             University of Utah</a>, where I gained hands-on experience in building dynamic and responsive 
-                            web applications alone and in a group setting. This portfolio showcases my projects 
-                            and skills, demonstrating my ability to create efficient and scalable solutions.
+                            web applications both alone and in a group setting. This portfolio centralizes and showcases my projects 
+                            and skills, demonstrating my ability to create efficient and scalable solutions, whether in quick draft or large application.
                         </p>
                         <p>
                             This portfolio was made with <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
                             React</a>. It is a single-page application with a navigation bar that links to different 
                             sections of the page. The page is styled with custom CSS modules for more permanent solutions 
-                            and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a> for drafting,
+                            and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a> implementation for drafting,
                             while using React components to display information. The page is responsive and can be viewed on different screen sizes.
-                            In class, we used deployment resources like <a href="https://render.com/" target="_blank" rel="noopener noreferrer">Render
+                            In class, we practiced deployment with resources like <a href="https://render.com/" target="_blank" rel="noopener noreferrer">Render
                             </a>, <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify
                             </a>, and <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel
                             </a>. Since then, I have moved to a <a href="https://magicapps.dev/" target="_blank" rel="noopener noreferrer">personal hosting 
-                            service</a> for my own deployments. The page is also connected to a <a href="https://github.com/MagicInUse/Portfolio" target="_blank"  rel="noopener noreferrer">
-                            GitHub repository</a> for version control.
+                            service</a> for my own deployments. This page is also connected to a <a href="https://github.com/MagicInUse/Portfolio" target="_blank"  rel="noopener noreferrer">
+                            GitHub repository</a> for version control and source code previewing.
                         </p>
                     </>
-                    }
-                image={<AsideImg source={headshot} alt="A picture of Jake" classes="headshot" />}
+                }
+                image={<AsideImg source={headshot} alt="A picture of Jake" classes="headshot" floatTo="right" />}
             />
         </>
     );
 };
-  
+
 export default Home;

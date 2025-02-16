@@ -1,10 +1,21 @@
 .image {
     width: 40%;
     height: auto;
-    float: right;
     border-radius: 18px;
     margin: 10px 20px 20px 20px;
     box-shadow: 10px 10px 10px 5px #111;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatNone {
+    float: none;
 }
 
 @media (max-width: 800px) {

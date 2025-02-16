@@ -5,15 +5,18 @@ interface AsideImgProps {
   source: string;
   alt: string;
   classes?: string;
+  floatTo?: 'left' | 'right' | 'none';
 }
 
-const AsideImg: React.FC<AsideImgProps> = ({ source, alt, classes }) => {
+const AsideImg: React.FC<AsideImgProps> = ({ source, alt, classes, floatTo }) => {
+  const floatClass = floatTo === 'left' ? styles.floatLeft : floatTo === 'right' ? styles.floatRight : styles.floatNone;
+
   return (
-    <aside className={styles.asideFix}>
+    <aside>
       <img 
         src={source} 
         alt={alt} 
-        className={`${styles.image} ${classes || ''}`} 
+        className={`${styles.image} ${floatClass} ${classes || ''}`} 
       />
     </aside>
   );
