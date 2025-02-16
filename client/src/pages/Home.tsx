@@ -29,18 +29,24 @@ const Home: React.FC = () => {
                             web applications both alone and in a group setting. This portfolio centralizes and showcases my projects 
                             and skills, demonstrating my ability to create efficient and scalable solutions, whether in quick draft or large application.
                         </p>
+                        <h3>About the Portfolio</h3>
                         <p>
                             This portfolio was made with <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
                             React</a>. It is a single-page application with a navigation bar that links to different 
-                            sections of the page. The page is styled with custom CSS modules for more permanent solutions 
-                            and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a> implementation for drafting,
+                            sections of the page. The page is styled with custom CSS component modules for more permanent solutions 
+                            and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a> implementation for normalized css and drafting,
                             while using React components to display information. The page is responsive and can be viewed on different screen sizes.
                             In class, we practiced deployment with resources like <a href="https://render.com/" target="_blank" rel="noopener noreferrer">Render
                             </a>, <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify
                             </a>, and <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel
                             </a>. Since then, I have moved to a <a href="https://magicapps.dev/" target="_blank" rel="noopener noreferrer">personal hosting 
-                            service</a> for my own deployments. This page is also connected to a <a href="https://github.com/MagicInUse/Portfolio" target="_blank"  rel="noopener noreferrer">
-                            GitHub repository</a> for version control and source code previewing.
+                            service</a> for my own deployments.
+                        </p>
+                        <p>
+                            This page is also connected to a <a href="https://github.com/MagicInUse/Portfolio" target="_blank"  rel="noopener noreferrer">
+                            GitHub repository</a> for version control and source code previewing. I originally thought to start this project from scratch, but 
+                            I was intrigued by the challenge of refactoring a previous project. I have learned a lot since my first 
+                            portfolio in Basic Web Design - Schenk's class - 2007, and I am excited to continue learning and growing as a developer.
                         </p>
                     </>
                 }
