@@ -1,5 +1,6 @@
 .card {
-    margin: 1rem;
+    margin: 20px;
+    padding: 20px;
     border-radius: 8px;
     background: #242424;
 }
