@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw'; // To render HTML tags in Markdown
 import remarkGfm from 'remark-gfm'; // To support GitHub Flavored Markdown tables
-import { Card } from '../Card'; // Adjust the import based on your project structure
-import styles from './Project.module.css'; // Adjust the import based on your project structure
+import { Card } from '../Card'; 
+import styles from './Project.module.css'; 
 
 interface ProjectProps {
   repo: {

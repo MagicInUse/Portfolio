@@ -9,9 +9,13 @@ export const fetchReposWithReadme = async (username: string) => {
     const data = await response.json();
 
     const reposWithReadme = await Promise.all(data.map(async (repo: any) => {
-      const readmeResponse = await fetch(`https://raw.githubusercontent.com/${username}/${repo.name}/refs/heads/main/README.md`);
-      const readme = await readmeResponse.text();
-      return { ...repo, readme };
+      try {
+        const readmeResponse = await fetch(`https://raw.githubusercontent.com/${username}/${repo.name}/main/README.md`);
+        const readme = await readmeResponse.text();
+        return { ...repo, readme };
+      } catch {
+        return { ...repo, readme: '' };
+      }
     }));
 
     return reposWithReadme;

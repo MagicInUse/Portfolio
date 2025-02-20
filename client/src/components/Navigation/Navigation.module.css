@@ -34,10 +34,25 @@
 /* Override the general link styles for resume download */
 .navlink[download] {
     color: #22dd22;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .navlink[download]:hover {
     text-decoration: underline;
+}
+
+.navlink[download]:hover .afterContentContainer {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Remove the external link arrow for the resume download */

@@ -17,8 +17,8 @@
 
 .carousel > * {
   flex: 0 0 auto; /* Ensure children do not shrink or grow */
-  width: 880px; /* Adjust the width to a more appropriate size */
-  margin: 10px 10px; /* Add some margin between items */
+  width: 860px; /* Adjust the width to a more appropriate size - 900 total width, 860c + 20m + 20m */
+  margin: 20px;
 }
 
 .scrollButton {
