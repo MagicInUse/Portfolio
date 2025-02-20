@@ -1,0 +1,10 @@
+.readme {
+  margin-top: 20px;
+}
+
+.readme pre {
+  white-space: pre-wrap;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}

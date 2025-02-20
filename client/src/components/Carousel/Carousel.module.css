@@ -1,10 +1,42 @@
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Ensure the container takes the full width */
+  max-width: 900px; /* Set a maximum width */
+  max-height: 100vh; /* Ensure the container does not exceed the viewport height */
+}
+
 .carousel {
   display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+  overflow-x: hidden; /* Hide overflow content */
+  scroll-behavior: smooth;
+  width: 100%;
+  max-height: inherit; /* Inherit max height from the container */
 }
 
 .carousel > * {
-  scroll-snap-align: start;
-  flex: 0 0 auto;
+  flex: 0 0 auto; /* Ensure children do not shrink or grow */
+  width: 880px; /* Adjust the width to a more appropriate size */
+  margin: 10px 0; /* Add some margin between items */
+}
+
+.scrollButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scrollButton:first-of-type {
+  left: 0;
+}
+
+.scrollButton:last-of-type {
+  right: 0;
 }

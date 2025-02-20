@@ -15,7 +15,7 @@ interface EmailResponse {
   };
 }
 
-const sendEmail = async (contactData: ContactFormData): Promise<EmailResponse> => {
+export const sendEmail = async (contactData: ContactFormData): Promise<EmailResponse> => {
   try {
     const response = await fetch('/api/contact', {
       method: 'POST',
@@ -35,5 +35,3 @@ const sendEmail = async (contactData: ContactFormData): Promise<EmailResponse> =
     };
   }
 };
-
-export default sendEmail;

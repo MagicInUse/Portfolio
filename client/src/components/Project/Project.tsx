@@ -1,15 +1,32 @@
-import { useState } from 'react';
+import React from 'react';
+import Card from '../Card/Card';
 import styles from './Project.module.css';
+import ReactMarkdown from 'react-markdown'; // Import react-markdown
 
 interface ProjectProps {
-  name: string;
+  repo: {
+    name: string;
+    description: string;
+    html_url: string;
+    readme: string;
+  };
 }
 
-const Project = ({ name: repoName }: ProjectProps) => {
+const Project = ({ repo }: ProjectProps) => {
   return (
-    <div>
-      <h3>{repoName}</h3>
-    </div>
+    <Card
+      heading={repo.name}
+      details={
+        <div>
+          <p>{repo.description}</p>
+          <a href={repo.html_url} target="_blank" rel="noopener noreferrer">View Repository</a>
+          <div className={styles.readme}>
+            <h3>README</h3>
+            <ReactMarkdown>{repo.readme}</ReactMarkdown> {/* Render Markdown content */}
+          </div>
+        </div>
+      }
+    />
   );
 };
 

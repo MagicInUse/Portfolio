@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 import styles from './ContactForm.module.css';
-import sendEmail from '../../utils/mailer.js';
+import { sendEmail } from '../../utils/mailer.js';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
