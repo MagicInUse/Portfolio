@@ -22,11 +22,11 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(({ children }, 
 
   return (
     <div className={styles.carouselContainer}>
-      <button className={styles.scrollButton} onClick={scrollLeft}>{"<"}</button>
+      <button type="button" className={styles.scrollButton} onClick={scrollLeft}>{"<"}</button>
       <div className={styles.carousel} ref={carouselRef}>
         {children}
       </div>
-      <button className={styles.scrollButton} onClick={scrollRight}>{">"}</button>
+      <button type="button" className={styles.scrollButton} onClick={scrollRight}>{">"}</button>
     </div>
   );
 });

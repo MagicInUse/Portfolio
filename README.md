@@ -1,6 +1,6 @@
 # Portfolio
 
-A simple portfolio page utilizing NodeJS & React. [View it live](https://jacobnorr.netlify.app/)!
+A simple portfolio page utilizing NodeJS & React. [View it live](https://jacobnorr.me/)!
 
 ## Table of Contents
 
