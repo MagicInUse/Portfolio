@@ -2,13 +2,12 @@ import React from 'react';
 import { Card } from '../components/Card';
 import { AsideImg } from '../components/AsideImg';
 import headshot from '../assets/headshot.jpg';
-import sendEmail from '../utils/mailer';
 
 const Home: React.FC = () => {
     return (
         <>
             <Card
-                heading="Welcome to my Portfolio!"
+                heading="Welcome to my Webfolio!"
                 details={
                     <>
                         <p>
