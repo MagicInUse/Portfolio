@@ -78,3 +78,23 @@ a.external::after {
     color: var(--accent-color);
   }
 }
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 1.2em;
+  }
+
+  body {
+    max-width: 100%;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  a {
+    word-wrap: break-word;
+  }
+
+  img {
+    max-width: 90%;
+  }
+}

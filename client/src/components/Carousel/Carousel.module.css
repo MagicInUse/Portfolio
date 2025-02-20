@@ -60,3 +60,21 @@
   border-bottom-right-radius: 0;
   padding-right: 3px;
 }
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .carousel > * {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .scrollButton {
+    font-size: 1rem;
+    padding: 5px;
+    top: 2.9rem; /* Move the scroll buttons down */
+  }
+}

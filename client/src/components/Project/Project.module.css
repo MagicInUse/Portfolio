@@ -26,3 +26,22 @@
 .link {
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .readme {
+    max-height: 400px;
+    padding: 5px;
+  }
+
+  .readme pre {
+    font-size: 0.6rem;
+  }
+
+  .image {
+    max-width: 100%;
+  }
+
+  .link {
+    word-wrap: break-word;
+  }
+}
