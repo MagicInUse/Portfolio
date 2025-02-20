@@ -18,7 +18,8 @@ const Portfolio = () => {
     const fetchRepos = async () => {
       try {
         const reposWithReadme = await fetchReposWithReadme('MagicInUse');
-        setRepos(reposWithReadme);
+        const filteredRepos = reposWithReadme.filter(repo => repo.readme.length >= 500);
+        setRepos(filteredRepos);
       } catch (error) {
         console.error('Error fetching repos:', error);
       }

@@ -1,5 +1,10 @@
 .readme {
   margin-top: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+  background: #fff; /* Ensure background color fits the card */
+  padding: 10px; /* Add padding to fit the content */
+  border-radius: 5px; /* Match the card's border radius */
 }
 
 .readme pre {
@@ -7,4 +12,12 @@
   background: #f5f5f5;
   padding: 10px;
   border-radius: 5px;
+}
+
+.image {
+  max-width: 100%; /* Ensure images fit within the container */
+}
+
+.link {
+  text-decoration: none;
 }
