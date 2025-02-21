@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import resume from '../../assets/Resume.pdf';
+import resume from '/Resume.pdf';
 import { FileDownload } from '../../assets/SVGs';
 
 const Navigation = () => {

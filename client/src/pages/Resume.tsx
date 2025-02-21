@@ -1,18 +1,10 @@
 import React from 'react';
-import { Card } from '../components/Card';
-import resume from '../assets/Resume.pdf';
-import { FileDownload } from '../assets/SVGs';
-import styles from '../components/Navigation/Navigation.module.css';
+import PDFViewer from '../components/PDFViewer/PDFViewer';
 
-const Resume: React.FC = () => {
-  return (
-    <Card 
-        heading="My Resume"
-        details={
-            <embed src="./assets/Resume.pdf" type="application/pdf" width="100%" height="600px" />
-        }
-    />
-  );
+const Resume = () => {
+    return (
+        <PDFViewer fileUrl="/Resume.pdf" />
+    );
 };
 
 export default Resume;

@@ -1,0 +1,23 @@
+.viewerContainer {
+    margin: 20px;
+    border-radius: 8px;
+    background: #242424;
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 10px 5px #111;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+@media (max-width: 800px) {
+    .viewerContainer {
+        margin: 10px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .viewerContainer {
+        margin: 10px;
+        padding: 10px;
+    }
+}

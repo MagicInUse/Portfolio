@@ -1,5 +1,5 @@
 .header {
-    background-image: url('../../assets/logo.png');
+    background-image: url('/logo.png');
     background-color: #242424;
     background-position: left;
     background-position-x: 15px;
@@ -31,7 +31,7 @@
 
 @media (max-width: 800px) {
     .header {
-        background-image: url('../../assets/logo.png');
+        background-image: url('/logo.png');
         background-color: #242424;
         background-position: left;
         background-position-x: 15px;

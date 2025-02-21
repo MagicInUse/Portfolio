@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../components/Card';
 import { AsideImg } from '../components/AsideImg';
-import headshot from '../assets/headshot.jpg';
+import headshot from '../../public/headshot.jpg';
 
 const Home: React.FC = () => {
     return (

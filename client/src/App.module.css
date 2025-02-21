@@ -17,7 +17,7 @@
   font-style: normal;
   font-size: 1.5em;
   color: var(--primary-text);
-  background-image: url('./assets/BGimg.png');
+  background-image: url('/BGimg.png');
   background-color: var(--primary-bg);
   background-position: top;
   background-repeat: repeat-y;
