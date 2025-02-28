@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Project from '../../components/Project/Project';
 import Carousel from '../../components/Carousel/Carousel';
 import { fetchReposWithReadme } from '../../utils/github';
@@ -16,6 +16,7 @@ interface Repo {
 const Portfolio = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const cardSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -49,7 +50,10 @@ const Portfolio = () => {
 
   return (
     <div>
-      <div className={styles.cardSection}>
+      <div 
+        ref={cardSectionRef}
+        className={styles.cardSection}
+      >
         {repos.map((repo, index) => (
           <a 
             key={repo.id} 

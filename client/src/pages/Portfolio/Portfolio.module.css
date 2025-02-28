@@ -7,20 +7,26 @@
   white-space: nowrap;  /* Prevent text wrapping */
   -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
   width: 900px; /* Set a fixed width, match content */
+  scroll-behavior: smooth;
 }
 
 .cardSection::-webkit-scrollbar {
-  height: 6px;  /* Scrollbar height */
+  height: 8px;
+  cursor: grab;
 }
 
 .cardSection::-webkit-scrollbar-thumb {
-  background-color: #00FF00;  /* Scrollbar color */
-  border-radius: 3px;
+  background-color: #22dd22;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.cardSection::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
 }
 
 .cardSection::-webkit-scrollbar-track {
-  background: rgba(0, 255, 0, 0.1);
-  height: 20px;  /* Track height */
+  background: rgba(34, 221, 34, 0.1);
 }
 
 .cardLink {
