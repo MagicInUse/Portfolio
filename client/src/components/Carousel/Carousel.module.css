@@ -3,22 +3,34 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-  width: 100%; /* Ensure the container takes the full width */
-  max-width: 900px; /* Set a maximum width */
+  width: 900px; /* Ensure the container takes the full width */
+  max-width: 900px; /* Increased to account for buttons */
+  margin: 0 auto;
 }
 
 .carousel {
   display: flex;
   overflow-x: hidden; /* Hide overflow content */
   scroll-behavior: smooth;
-  width: 100%;
+  width: 900px;
+  margin: 0;
   max-height: inherit; /* Inherit max height from the container */
+  overflow: hidden;
+  position: relative;
 }
 
-.carousel > * {
-  flex: 0 0 auto; /* Ensure children do not shrink or grow */
-  width: 860px; /* Adjust the width to a more appropriate size - 900 total width, 860c + 20m + 20m */
-  margin: 20px;
+.carouselTrack {
+  position: relative;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carouselItem {
+  flex: 0 0 900px;
+  width: 900px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .scrollButton {
@@ -65,11 +77,18 @@
   .carouselContainer {
     max-width: 100%;
     flex-direction: column;
+    width: 100%;
   }
 
-  .carousel > * {
+  .carousel {
     width: 100%;
-    margin: 5px 0;
+    margin: 0;
+  }
+
+  .carouselItem {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 10px;
   }
 
   .scrollButton {

@@ -27,6 +27,36 @@
   text-decoration: none;
 }
 
+.projectCard {
+  width: 900px;
+  max-width: 900px;
+  margin: 0;
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.projectContent {
+  max-height: 700px; /* Increased height for better content visibility */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.projectContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projectContent::-webkit-scrollbar-track {
+  background: #242424;
+  border-radius: 4px;
+}
+
+.projectContent::-webkit-scrollbar-thumb {
+  background: #33ee33;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .readme {
     max-height: 400px;
@@ -43,5 +73,15 @@
 
   .link {
     word-wrap: break-word;
+  }
+
+  .projectCard {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .projectContent {
+    max-height: 500px;
   }
 }

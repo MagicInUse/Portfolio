@@ -48,6 +48,14 @@ const Portfolio = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + repos.length) % repos.length);
   };
 
+  const handleCarouselChange = (direction: 'prev' | 'next') => {
+    if (direction === 'prev') {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + repos.length) % repos.length);
+    } else {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % repos.length);
+    }
+  };
+
   return (
     <div>
       <div 
@@ -84,13 +92,13 @@ const Portfolio = () => {
           Next
         </button>
       </div>
-      <Carousel currentIndex={currentIndex}>
-        {repos.map((repo, index) => (
-          <div 
-            key={repo.id} 
-            id={`repo-${repo.id}`}
-            style={{ display: currentIndex === index ? 'block' : 'none' }}
-          >
+      <Carousel 
+        currentIndex={currentIndex}
+        onPrev={() => handleCarouselChange('prev')}
+        onNext={() => handleCarouselChange('next')}
+      >
+        {repos.map((repo) => (
+          <div key={repo.id} id={`github-repo-id-${repo.id}`}>
             <Project repo={repo} />
           </div>
         ))}
