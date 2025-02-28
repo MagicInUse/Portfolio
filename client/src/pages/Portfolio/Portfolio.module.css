@@ -1,0 +1,70 @@
+.cardSection {
+  display: flex;
+  flex-wrap: nowrap;  /* Prevent wrapping */
+  justify-content: flex-start;  /* Start from the left */
+  margin-bottom: 20px;
+  overflow-x: auto;  /* Allow horizontal scrolling */
+  white-space: nowrap;  /* Prevent text wrapping */
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+  width: 900px; /* Set a fixed width, match content */
+}
+
+.cardSection::-webkit-scrollbar {
+  height: 6px;  /* Scrollbar height */
+}
+
+.cardSection::-webkit-scrollbar-thumb {
+  background-color: #00FF00;  /* Scrollbar color */
+  border-radius: 3px;
+}
+
+.cardSection::-webkit-scrollbar-track {
+  background: rgba(0, 255, 0, 0.1);
+  height: 20px;  /* Track height */
+}
+
+.cardLink {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 0;
+  font-size: 0.9em;
+  transition: background 0.3s ease, transform 0.3s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardLink:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;  /* Changed from center to space-between */
+  width: 100%;
+  padding: 0px 10px;
+  margin: 0px;
+}
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #cc33cc;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: #b32bb3;
+  transform: none;
+}
+
+.button:disabled {
+  background-color: #550055;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
