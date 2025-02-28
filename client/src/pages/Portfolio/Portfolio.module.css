@@ -6,7 +6,9 @@
   overflow-x: auto;  /* Allow horizontal scrolling */
   white-space: nowrap;  /* Prevent text wrapping */
   -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
-  width: 900px; /* Set a fixed width, match content */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   scroll-behavior: smooth;
 }
 
@@ -84,4 +86,26 @@
   background-color: #550055;
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .cardSection {
+    width: 100%;
+    padding: 0 10px;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .cardLink {
+    font-size: 0.8em;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardLink {
+    font-size: 0.7em;
+    padding: 3px 6px;
+  }
 }

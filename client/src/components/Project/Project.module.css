@@ -1,10 +1,11 @@
 .readme {
   margin-top: 20px;
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 500px;
   background: #1d1d1d; /* Ensure background color fits the card */
   padding: 10px; /* Add padding to fit the content */
   border-radius: 5px; /* Match the card's border radius */
+  padding-right: 15px;
 }
 
 .readme h1 {
@@ -21,20 +22,29 @@
 
 .image {
   max-width: 100%; /* Ensure images fit within the container */
+  height: auto;
+  display: block;
+  margin: 10px 0;
 }
 
 .link {
   text-decoration: none;
+  color: #22dd22;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .projectCard {
-  width: 900px;
+  width: 100%;
   max-width: 900px;
   margin: 0;
   background: #1a1a1a;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .projectContent {
@@ -60,10 +70,17 @@
   .readme {
     max-height: 400px;
     padding: 5px;
+    font-size: 0.9em;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .readme pre {
     font-size: 0.6rem;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .image {
@@ -76,11 +93,24 @@
 
   .projectCard {
     width: 100%;
-    max-width: 100%;
-    padding: 15px;
+    max-width: none;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .projectContent {
     max-height: 500px;
+    width: 100%;
+    padding-right: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .readme {
+    max-height: 300px;
+    font-size: 0.8em;
+    padding-right: 10px;
   }
 }

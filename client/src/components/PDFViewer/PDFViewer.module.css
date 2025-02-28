@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 600px;
 }
 
 /* Controls for navigation */
@@ -46,6 +47,35 @@
     cursor: not-allowed;
     box-shadow: none;
     transform: none; /* Disable translateY effect */
+}
+
+.pdfContainer {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdfDocument {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pdfPage {
+    position: relative;
+}
+
+/* Hide default loading messages */
+.pdfDocument :global(.react-pdf__message) {
+    display: none !important;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Responsive Adjustments */
