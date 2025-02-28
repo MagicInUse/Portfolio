@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card } from '../components/Card';
 import { AsideImg } from '../components/AsideImg';
-import headshot from '../../public/headshot.jpg';
 
 const Home: React.FC = () => {
     return (
@@ -49,7 +48,7 @@ const Home: React.FC = () => {
                         </p>
                     </>
                 }
-                image={<AsideImg source={headshot} alt="A picture of Jake" classes="headshot" floatTo="right" />}
+                image={<AsideImg source="headshot.jpg" alt="A picture of Jake" classes="headshot" floatTo="right" />}
             />
         </>
     );

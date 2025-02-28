@@ -1,14 +1,44 @@
-/* This file contains the styles for the PDFViewer component, but react-pdf seems to have its own styles. Utilizing those until a need arises */
-
+/* Container for the viewer */
 .viewerContainer {
     margin: 20px;
     border-radius: 8px;
     background: #242424;
-    border: 1px solid #ccc;
-    box-shadow: 10px 10px 10px 5px #111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PDF container */
+.pdfContainer {
     overflow: hidden;
 }
 
+/* Controls for navigation */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 69%; /* Ensure controls take the full width */
+}
+
+/* Button styles */
+.button {
+    background-color: #cc33cc;
+    color: #fff;
+    border: none;
+    margin: 15px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #550055;
+    cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 800px) {
     .viewerContainer {
         margin: 10px;
