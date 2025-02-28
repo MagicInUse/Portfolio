@@ -3,9 +3,10 @@ import styles from './Carousel.module.css';
 
 interface CarouselProps {
   children: React.ReactNode;
+  currentIndex: number;
 }
 
-const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(({ children }, ref) => {
+const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(({ children, currentIndex }, ref) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {

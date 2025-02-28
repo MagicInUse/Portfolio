@@ -40,6 +40,17 @@
   transform: translateY(-2px);
 }
 
+.active {
+  background-color: #22dd22;
+  color: #242424;
+}
+
+.active:hover {
+  background-color: #22dd22;
+  color: #242424;
+  transform: none;
+}
+
 .controls {
   display: flex;
   justify-content: space-between;  /* Changed from center to space-between */

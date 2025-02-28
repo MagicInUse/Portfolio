@@ -23,7 +23,13 @@ const Portfolio = () => {
         const reposWithReadme = await fetchReposWithReadme('MagicInUse');
         const filteredRepos = reposWithReadme
           .filter(repo => repo.readme.length >= 500)
-          .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
+          .sort((a, b) => {
+            // Place MagicInUse repo first
+            if (a.name === 'MagicInUse') return -1;
+            if (b.name === 'MagicInUse') return 1;
+            // Then sort by update date
+            return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+          });
         setRepos(filteredRepos);
       } catch (error) {
         console.error('Error fetching repos:', error);
@@ -45,22 +51,42 @@ const Portfolio = () => {
     <div>
       <div className={styles.cardSection}>
         {repos.map((repo, index) => (
-          <a key={repo.id} href={`#repo-${repo.id}`} className={styles.cardLink}>
+          <a 
+            key={repo.id} 
+            href={`#repo-${repo.id}`} 
+            className={`${styles.cardLink} ${currentIndex === index ? styles.active : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentIndex(index);
+            }}
+          >
             {repo.name}
           </a>
         ))}
       </div>
       <div className={styles.controls}>
-        <button onClick={handlePrev} disabled={repos.length === 0} className={styles.button}>
+        <button 
+          onClick={handlePrev} 
+          disabled={repos.length === 0 || currentIndex === 0} 
+          className={styles.button}
+        >
           Previous
         </button>
-        <button onClick={handleNext} disabled={repos.length === 0} className={styles.button}>
+        <button 
+          onClick={handleNext} 
+          disabled={repos.length === 0 || currentIndex === repos.length - 1} 
+          className={styles.button}
+        >
           Next
         </button>
       </div>
-      <Carousel>
+      <Carousel currentIndex={currentIndex}>
         {repos.map((repo, index) => (
-          <div key={repo.id} id={`repo-${repo.id}`}>
+          <div 
+            key={repo.id} 
+            id={`repo-${repo.id}`}
+            style={{ display: currentIndex === index ? 'block' : 'none' }}
+          >
             <Project repo={repo} />
           </div>
         ))}
