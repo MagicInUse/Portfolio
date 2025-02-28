@@ -32,13 +32,11 @@ const About = () => {
           </p>
           <p>
             Before transitioning to the software industry, I spent eight years working at a manufacturing facility for PCBs/PCAs, 
-            where I gained valuable insights into hardware functions. I often collaborate with my best friend <a href="https://github.com/JarenElectron" rel="noopener noreferrer">
-            Jaren</a>, who has taught me a lot about hardware.
+            where I gained valuable insights into hardware functions. I often collaborate with my best friend Jaren, who has taught me a lot about hardware.
           </p>
           <p>
             I have a daughter, Jynx, who is the highlight of my life. I currently reside in Northern Utah. In my free time, 
-            I enjoy streaming on <a href="https://www.twitch.tv/magicinuse" rel="noopener noreferrer">
-            Twitch</a> and playing guitar, sometimes both at the same time through a game called <a href="https://www.ubisoft.com/en-us/game/rocksmith/2014-remastered" rel="noopener noreferrer">
+            I enjoy streaming on Twitch and playing guitar, sometimes both at the same time through a game called <a href="https://www.ubisoft.com/en-us/game/rocksmith/2014-remastered" rel="noopener noreferrer">
             Rocksmith</a>.
           </p>
         </>

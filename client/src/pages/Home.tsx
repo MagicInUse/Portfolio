@@ -27,7 +27,14 @@ const Home: React.FC = () => {
                             web applications both alone and in a group setting. This portfolio centralizes and showcases my projects 
                             and skills, demonstrating my ability to create efficient and scalable solutions, whether in quick draft or large application.
                         </p>
-                        <h3>About the Portfolio</h3>
+                    </>
+                }
+                image={<AsideImg source="headshot.jpg" alt="A picture of Jake" classes="headshot" floatTo="right" />}
+            />
+            <Card
+                heading="About the Portfolio"
+                details={
+                    <>
                         <p>
                             This portfolio was made with <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
                             React</a>. It is a single-page application with a navigation bar that links to different 
@@ -48,7 +55,6 @@ const Home: React.FC = () => {
                         </p>
                     </>
                 }
-                image={<AsideImg source="headshot.jpg" alt="A picture of Jake" classes="headshot" floatTo="right" />}
             />
         </>
     );

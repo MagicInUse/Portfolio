@@ -12,7 +12,7 @@
 }
 
 .readme pre {
-    font-size: 0.69rem;
+  font-size: 0.69rem;
   white-space: pre-wrap;
   background: #151515;
   padding: 10px;
@@ -38,7 +38,6 @@
 }
 
 .projectContent {
-  max-height: 700px; /* Increased height for better content visibility */
   overflow-y: auto;
   padding-right: 10px;
 }

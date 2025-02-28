@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Project from '../../components/Project/Project';
 import Carousel from '../../components/Carousel/Carousel';
 import { fetchReposWithReadme } from '../../utils/github';
@@ -17,6 +17,37 @@ const Portfolio = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const cardSectionRef = useRef<HTMLDivElement>(null);
+
+  const scrollActiveCardIntoView = useCallback(() => {
+    if (cardSectionRef.current) {
+      const activeCard = cardSectionRef.current.children[currentIndex] as HTMLElement;
+      if (activeCard) {
+        activeCard.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
+    }
+  }, [currentIndex]);
+
+  // Remove scroll event listener effect
+
+  // Only scroll on currentIndex change from button clicks
+  const handleCardClick = (index: number) => {
+    setCurrentIndex(index);
+    scrollActiveCardIntoView();
+  };
+
+  const handleCarouselChange = (direction: 'prev' | 'next') => {
+    if (direction === 'prev') {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + repos.length) % repos.length);
+      scrollActiveCardIntoView();
+    } else {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % repos.length);
+      scrollActiveCardIntoView();
+    }
+  };
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -40,22 +71,6 @@ const Portfolio = () => {
     fetchRepos();
   }, []);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % repos.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + repos.length) % repos.length);
-  };
-
-  const handleCarouselChange = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + repos.length) % repos.length);
-    } else {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % repos.length);
-    }
-  };
-
   return (
     <div>
       <div 
@@ -69,28 +84,12 @@ const Portfolio = () => {
             className={`${styles.cardLink} ${currentIndex === index ? styles.active : ''}`}
             onClick={(e) => {
               e.preventDefault();
-              setCurrentIndex(index);
+              handleCardClick(index);
             }}
           >
             {repo.name}
           </a>
         ))}
-      </div>
-      <div className={styles.controls}>
-        <button 
-          onClick={handlePrev} 
-          disabled={repos.length === 0 || currentIndex === 0} 
-          className={styles.button}
-        >
-          Previous
-        </button>
-        <button 
-          onClick={handleNext} 
-          disabled={repos.length === 0 || currentIndex === repos.length - 1} 
-          className={styles.button}
-        >
-          Next
-        </button>
       </div>
       <Carousel 
         currentIndex={currentIndex}

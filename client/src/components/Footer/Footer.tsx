@@ -24,11 +24,6 @@ const Footer = () => {
             Spotify
           </a>
         </li>
-        <li className={styles.listItem}>
-          <a className={styles.link} href="https://twitch.tv/magicinuse" target="_blank" rel="noopener noreferrer">
-            Twitch
-          </a>
-        </li>
       </ul>
       <p className={styles.copyright}>{new Date().getFullYear()} | Jacob Norr</p>
     </footer>
