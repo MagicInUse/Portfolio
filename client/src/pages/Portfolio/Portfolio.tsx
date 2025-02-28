@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Project from '../../components/Project/Project';
 import Carousel from '../../components/Carousel/Carousel';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { fetchReposWithReadme } from '../../utils/github';
 import styles from './Portfolio.module.css'; // Import CSS module for styling
 
@@ -15,6 +16,7 @@ interface Repo {
 
 const Portfolio = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const cardSectionRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +54,7 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
+        setIsLoading(true);
         const reposWithReadme = await fetchReposWithReadme('MagicInUse');
         const filteredRepos = reposWithReadme
           .filter(repo => repo.readme.length >= 500)
@@ -65,11 +68,17 @@ const Portfolio = () => {
         setRepos(filteredRepos);
       } catch (error) {
         console.error('Error fetching repos:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchRepos();
   }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div>
