@@ -19,10 +19,15 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const cardSectionRef = useRef<HTMLDivElement>(null);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const isManualScrolling = useRef(false);
 
-  const scrollActiveCardIntoView = useCallback(() => {
+  // Single, consistent centering function
+  const centerActiveCard = useCallback((index: number) => {
     if (cardSectionRef.current) {
-      const activeCard = cardSectionRef.current.children[currentIndex] as HTMLElement;
+      const container = cardSectionRef.current;
+      const activeCard = container.children[index] as HTMLElement;
+      
       if (activeCard) {
         activeCard.scrollIntoView({
           behavior: 'smooth',
@@ -31,24 +36,58 @@ const Portfolio = () => {
         });
       }
     }
-  }, [currentIndex]);
+  }, []);
 
-  // Remove scroll event listener effect
+  // Single scroll handler
+  useEffect(() => {
+    const container = cardSectionRef.current;
+    if (!container) return;
 
-  // Only scroll on currentIndex change from button clicks
+    const handleScroll = () => {
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      if (!isManualScrolling.current) return;
+
+      scrollTimeoutRef.current = setTimeout(() => {
+        isManualScrolling.current = false;
+        centerActiveCard(currentIndex);
+      }, 3000);
+    };
+
+    const handleScrollStart = () => {
+      isManualScrolling.current = true;
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    container.addEventListener('touchstart', handleScrollStart);
+    container.addEventListener('mousedown', handleScrollStart);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      container.removeEventListener('touchstart', handleScrollStart);
+      container.removeEventListener('mousedown', handleScrollStart);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [currentIndex, centerActiveCard]);
+
   const handleCardClick = (index: number) => {
     setCurrentIndex(index);
-    scrollActiveCardIntoView();
+    isManualScrolling.current = false;
+    centerActiveCard(index);
   };
 
   const handleCarouselChange = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + repos.length) % repos.length);
-      scrollActiveCardIntoView();
-    } else {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % repos.length);
-      scrollActiveCardIntoView();
-    }
+    const newIndex = direction === 'prev' 
+      ? (currentIndex - 1 + repos.length) % repos.length
+      : (currentIndex + 1) % repos.length;
+    
+    setCurrentIndex(newIndex);
+    isManualScrolling.current = false;
+    centerActiveCard(newIndex);
   };
 
   useEffect(() => {

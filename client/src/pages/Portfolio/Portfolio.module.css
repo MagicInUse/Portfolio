@@ -19,7 +19,7 @@
 
 .cardSection::-webkit-scrollbar-thumb {
   background-color: #22dd22;
-  border-radius: 4px;
+  border-radius: 0;
   cursor: grab;
 }
 
