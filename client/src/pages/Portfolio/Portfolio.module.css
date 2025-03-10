@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: nowrap;  /* Prevent wrapping */
   justify-content: flex-start;  /* Start from the left */
-  margin-bottom: 20px;
   overflow-x: auto;  /* Allow horizontal scrolling */
   white-space: nowrap;  /* Prevent text wrapping */
   -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
@@ -61,10 +60,10 @@
 
 .controls {
   display: flex;
-  justify-content: space-between;  /* Changed from center to space-between */
+  justify-content: space-between; 
   width: 100%;
   padding: 0px 10px;
-  margin: 0px;
+  margin: 0;
 }
 
 .button {
@@ -91,7 +90,6 @@
 @media (max-width: 768px) {
   .cardSection {
     width: 100%;
-    padding: 0 10px;
     justify-content: flex-start;
     overflow-x: auto;
   }

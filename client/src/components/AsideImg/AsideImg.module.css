@@ -2,7 +2,7 @@
     width: 40%;
     height: auto;
     border-radius: 18px;
-    margin: 10px 20px 20px 20px;
+    margin: 15px 25px 25px 25px;
     box-shadow: 10px 10px 10px 5px #111;
 }
 
@@ -23,4 +23,13 @@
         width: 80%;
         float: none;
     }
+}
+
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
 }

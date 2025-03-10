@@ -3,7 +3,7 @@ import Project from '../../components/Project/Project';
 import Carousel from '../../components/Carousel/Carousel';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { fetchReposWithReadme } from '../../utils/github';
-import styles from './Portfolio.module.css'; // Import CSS module for styling
+import styles from './Portfolio.module.css';
 
 interface Repo {
   id: number;
@@ -11,7 +11,7 @@ interface Repo {
   description: string;
   html_url: string;
   readme: string;
-  updated_at: string; // Add this field
+  updated_at: string;
 }
 
 const Portfolio = () => {
@@ -19,7 +19,6 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const cardSectionRef = useRef<HTMLDivElement>(null);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
   const isManualScrolling = useRef(false);
 
   // Single, consistent centering function
@@ -43,34 +42,16 @@ const Portfolio = () => {
     const container = cardSectionRef.current;
     if (!container) return;
 
-    const handleScroll = () => {
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-
-      if (!isManualScrolling.current) return;
-
-      scrollTimeoutRef.current = setTimeout(() => {
-        isManualScrolling.current = false;
-        centerActiveCard(currentIndex);
-      }, 3000);
-    };
-
     const handleScrollStart = () => {
       isManualScrolling.current = true;
     };
 
-    container.addEventListener('scroll', handleScroll);
     container.addEventListener('touchstart', handleScrollStart);
     container.addEventListener('mousedown', handleScrollStart);
 
     return () => {
-      container.removeEventListener('scroll', handleScroll);
       container.removeEventListener('touchstart', handleScrollStart);
       container.removeEventListener('mousedown', handleScrollStart);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
     };
   }, [currentIndex, centerActiveCard]);
 

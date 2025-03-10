@@ -86,7 +86,6 @@ a.external::after {
 
   body {
     max-width: 100%;
-    padding: 10px;
     flex-direction: column;
   }
 

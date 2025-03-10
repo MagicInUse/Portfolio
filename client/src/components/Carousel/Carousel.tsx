@@ -12,6 +12,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, currentIndex, onPrev, onN
   return (
     <div className={styles.carouselContainer}>
       <button 
+        type="button"
         className={`${styles.scrollButton} ${currentIndex === 0 ? styles.hidden : ''}`}
         onClick={onPrev}
       >
@@ -32,6 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, currentIndex, onPrev, onN
         </div>
       </div>
       <button 
+        type="button"
         className={`${styles.scrollButton} ${currentIndex === children.length - 1 ? styles.hidden : ''}`}
         onClick={onNext}
       >

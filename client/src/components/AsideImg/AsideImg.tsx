@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AsideImg.module.css';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 interface AsideImgProps {
   source: string;
@@ -13,11 +14,12 @@ const AsideImg: React.FC<AsideImgProps> = ({ source, alt, classes, floatTo }) =>
 
   return (
     <aside>
-      <img 
-        src={source} 
-        alt={alt} 
-        className={`${styles.image} ${floatClass} ${classes || ''}`} 
-      />
+        <img 
+          src={source} 
+          alt={alt} 
+          loading="lazy"
+          className={`${styles.image} ${floatClass} ${classes || ''}`}
+        />
     </aside>
   );
 };
